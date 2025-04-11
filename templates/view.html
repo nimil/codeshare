@@ -1,159 +1,28 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .title }}</title>
-    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.bootcdn.net/ajax/libs/codemirror/5.65.2/codemirror.min.css" rel="stylesheet">
-    <link href="https://cdn.bootcdn.net/ajax/libs/codemirror/5.65.2/theme/monokai.min.css" rel="stylesheet">
-    <link href="/static/css/style.css" rel="stylesheet">
-    <style>
-        :root {
-            --navbar-height: 60px;
-        }
-        
-        body {
-            background-color: #f4f4f4;
-            padding-top: var(--navbar-height);
-        }
-        
-        .navbar {
-            height: var(--navbar-height);
-            background: white;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-        
-        .preview-container {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        
-        .preview-header {
-            padding: 15px;
-            background: #fff;
-            border-bottom: 1px solid #eee;
-            font-size: 16px;
-            font-weight: 600;
-        }
-        
-        .preview-frame {
-            width: 100%;
-            height: 500px;
-            border: none;
-        }
-        
-        .code-container {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .code-header {
-            padding: 15px;
-            background: #fff;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .code-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin: 0;
-        }
-        
-        .CodeMirror {
-            height: auto !important;
-            min-height: 500px;
-        }
-        
-        .btn-primary {
-            background: #ff2442;
-            border-color: #ff2442;
-        }
-        
-        .btn-outline-primary {
-            color: #ff2442;
-            border-color: #ff2442;
-        }
-        
-        .btn-outline-primary:hover {
-            background: #ff2442;
-            border-color: #ff2442;
-        }
-        
-        .page-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        
-        .page-description {
-            color: #666;
-            font-size: 16px;
-            margin-bottom: 24px;
-        }
-    </style>
+    <title>{{ .page.Title }} - 旅游攻略分享平台</title>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <a class="navbar-brand" href="/">HTML代码分享</a>
-            <div class="d-flex align-items-center">
-                <a href="/" class="btn btn-outline-primary btn-sm">返回首页</a>
-            </div>
+    <header>
+        <h1>{{ .page.Title }}</h1>
+        <div class="meta">
+            <span>更新时间: {{ .page.UpdatedAt.Format "2006-01-02 15:04:05" }}</span>
         </div>
-    </nav>
+    </header>
+    
+    <main class="container">
+        <article class="guide-content">
+            {{ .page.Content | unescapeHTML }}
+        </article>
+    </main>
 
-    <div class="container mt-4">
-        <h1 class="page-title">{{ .codeShare.Title }}</h1>
-        <p class="page-description">{{ .codeShare.Description }}</p>
-        
-        <div class="preview-container">
-            <div class="preview-header">
-                预览效果
-            </div>
-            <iframe src="/preview/{{ .codeShare.ID }}" class="preview-frame"></iframe>
-        </div>
-
-        <div class="code-container">
-            <div class="code-header">
-                <span class="code-title">HTML源代码</span>
-                <div class="d-flex align-items-center">
-                    <small class="text-muted me-3">创建于 {{ .codeShare.CreatedAt.Format "2006-01-02 15:04" }}</small>
-                    <a href="/preview/{{ .codeShare.ID }}" target="_blank" class="btn btn-primary btn-sm">新窗口预览</a>
-                </div>
-            </div>
-            <div class="p-3">
-                <textarea id="code" style="display: none;">{{ .codeShare.Code }}</textarea>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdn.bootcdn.net/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
-    <script>
-        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-            lineNumbers: true,
-            theme: "monokai",
-            mode: "xml",
-            readOnly: true,
-            indentUnit: 4,
-            indentWithTabs: true
-        });
-    </script>
+    <footer>
+        <p>&copy; 2024 旅游攻略分享平台</p>
+        <a href="/" class="back-link">返回首页</a>
+    </footer>
 </body>
 </html> 
