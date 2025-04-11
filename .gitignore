@@ -1,0 +1,32 @@
+# 二进制文件
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+main
+
+# 测试文件
+*.test
+*.out
+
+# 依赖目录
+/vendor/
+
+# IDE 目录
+.idea/
+.vscode/
+
+# 日志文件
+*.log
+
+# Docker 相关
+*.tar
+.docker/
+
+# macOS 系统文件
+.DS_Store
+
+# 临时文件
+*.tmp
+/tmp/ 

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .title }}</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <style>
+        :root {
+            --navbar-height: 60px;
+        }
+        
+        body {
+            background-color: #f4f4f4;
+            padding-top: var(--navbar-height);
+        }
+        
+        .navbar {
+            height: var(--navbar-height);
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        .masonry-container {
+            column-count: 2;
+            column-gap: 15px;
+            padding: 15px;
+            padding-top: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .masonry-container {
+                column-count: 3;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .masonry-container {
+                column-count: 4;
+            }
+        }
+        
+        .card {
+            break-inside: avoid;
+            margin-bottom: 25px;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        
+        .preview-frame {
+            width: 100%;
+            height: 400px;
+            border: none;
+            background: #fff;
+            border-radius: 8px 8px 0 0;
+            pointer-events: none;
+            transform: scale(0.33);
+            transform-origin: 0 0;
+            width: 300%;
+            height: 1200px;
+            margin-bottom: -800px;
+        }
+        
+        .card-body {
+            padding: 16px;
+            background: white;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .card-text {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.5;
+        }
+        
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        
+        .btn-primary {
+            background: #ff2442;
+            border-color: #ff2442;
+        }
+        
+        .btn-outline-primary {
+            color: #ff2442;
+            border-color: #ff2442;
+        }
+        
+        .btn-outline-primary:hover {
+            background: #ff2442;
+            border-color: #ff2442;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/">旅游攻略分享平台</a>
+            <div class="d-flex align-items-center">
+                <a href="https://github.com" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="masonry-container">
+            <div class="card">
+                <iframe src="/xianthree" class="preview-frame"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">西安4日暴走攻略</h5>
+                    <p class="card-text">穿越千年古都，吃遍地道美食！</p>
+                </div>
+                <a href="/xianthree" target="_blank" class="card-overlay"></a>
+            </div>
+            <div class="card">
+                <iframe src="/shandong" class="preview-frame"></iframe>
+                <div class="card-body">
+                    <h5 class="card-title">山东环海自驾游5天攻略</h5>
+                    <p class="card-text">五一假期 · 1280公里海岸线 · 海鲜盛宴</p>
+                </div>
+                <a href="/shandong" target="_blank" class="card-overlay"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

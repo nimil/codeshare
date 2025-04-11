@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山东环海自驾游5天攻略 | 五一假期必看</title>
+    <style>
+        :root {
+            --primary: #FF2442; /* 小红书红 */
+            --secondary: #1E90FF; /* 海洋蓝 */
+            --accent: #FF9500; /* 日落橙 */
+            --light-bg: #FFF9F9;
+            --card-bg: white;
+            --text: #333;
+            --light-text: #666;
+        }
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+        }
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 30px 0 20px;
+            position: relative;
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: var(--secondary);
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0 25px;
+        }
+        .tag {
+            background-color: rgba(255, 36, 66, 0.1);
+            color: var(--primary);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .divider {
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            margin: 20px 0;
+            border-radius: 3px;
+        }
+        .day-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .day-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 36, 66, 0.1);
+        }
+        .day-header {
+            background: linear-gradient(135deg, var(--secondary), #4BC0C8);
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+        }
+        .day-content {
+            padding: 20px;
+        }
+        .time-slot {
+            margin-bottom: 20px;
+        }
+        .activity {
+            margin-bottom: 15px;
+        }
+        .activity h3 {
+            color: var(--secondary);
+            font-size: 16px;
+            margin: 0 0 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        .activity h3:before {
+            content: "📍";
+            margin-right: 8px;
+        }
+        .highlight {
+            background-color: rgba(30, 144, 255, 0.1);
+            color: var(--secondary);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        li:before {
+            content: "•";
+            color: var(--secondary);
+            position: absolute;
+            left: -15px;
+        }
+        .food-section {
+            background-color: rgba(255, 149, 0, 0.05);
+            border: 1px dashed rgba(255, 149, 0, 0.3);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 25px;
+        }
+        .food-section h2 {
+            color: var(--accent);
+            margin-top: 0;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .food-section h2:before {
+            content: "🍽️";
+            margin-right: 8px;
+        }
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .food-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 8px rgba(255, 149, 0, 0.05);
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        .food-item:before {
+            content: "✓";
+            color: var(--accent);
+            margin-right: 6px;
+            font-weight: bold;
+        }
+        .tips-section {
+            background-color: rgba(255, 36, 66, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .tips-section h2 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .tips-section h2:before {
+            content: "💡";
+            margin-right: 8px;
+        }
+        .route-info {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 25px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .info-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            min-width: 120px;
+        }
+        .info-card h3 {
+            margin: 0 0 5px 0;
+            color: var(--secondary);
+            font-size: 14px;
+        }
+        .info-card p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--light-text);
+            font-size: 14px;
+            padding-bottom: 30px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .food-grid {
+                grid-template-columns: 1fr;
+            }
+            .info-card {
+                min-width: 100px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>山东环海自驾游5天攻略</h1>
+            <div class="subtitle">五一假期 · 1280公里海岸线 · 海鲜盛宴 🌊🚗</div>
+            <div class="tags">
+                <div class="tag">#山东自驾</div>
+                <div class="tag">#五一去哪玩</div>
+                <div class="tag">#海边度假</div>
+                <div class="tag">#美食探店</div>
+            </div>
+        </header>
+
+        <div class="divider"></div>
+
+        <div class="route-info">
+            <div class="info-card">
+                <h3>全程里程</h3>
+                <p>1280km</p>
+            </div>
+            <div class="info-card">
+                <h3>途经城市</h3>
+                <p>5座</p>
+            </div>
+            <div class="info-card">
+                <h3>最佳季节</h3>
+                <p>4-10月</p>
+            </div>
+            <div class="info-card">
+                <h3>特色体验</h3>
+                <p>3大海湾</p>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span>𝐃𝐚𝐲𝟏｜济南 → 青岛</span>
+                <span>350km</span>
+            </div>
+            <div class="day-content">
+                <div class="time-slot">
+                    <div class="activity">
+                        <h3>上午行程</h3>
+                        <p>早餐后从济南出发，走<span class="highlight">G20青银高速</span></p>
+                        <p>途经淄博、潍坊，欣赏沿途风光</p>
+                    </div>
+                    <div class="activity">
+                        <h3>潍坊午餐</h3>
+                        <ul>
+                            <li><strong>潍坊朝天锅</strong> - 当地特色</li>
+                            <li><strong>杨家煎饼</strong> - 传统美味</li>
+                            <li><strong>风筝糕</strong> - 特色点心</li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <h3>青岛下午游</h3>
+                        <ul>
+                            <li>游览<span class="highlight">栈桥</span></li>
+                            <li>漫步八大关建筑群</li>
+                            <li>参观天主教堂</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="food-section">
+                    <h2>青岛夜生活</h2>
+                    <ul>
+                        <li><strong>台东夜市</strong> - 海鲜大餐</li>
+                        <li><strong>青岛啤酒</strong> - 必尝原浆</li>
+                        <li><strong>五四广场夜景</strong> - 灯光秀</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span>𝐃𝐚𝐲𝟐｜青岛深度游</span>
+                <span>市内游玩</span>
+            </div>
+            <div class="day-content">
+                <div class="time-slot">
+                    <div class="activity">
+                        <h3>文化体验</h3>
+                        <ul>
+                            <li><span class="highlight">青岛啤酒博物馆</span> - 了解啤酒历史</li>
+                            <li>五四广场 - 城市地标</li>
+                            <li>奥帆中心 - 奥运场馆</li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <h3>午餐推荐</h3>
+                        <p><strong>老字号饭店</strong>：老饭店、春和楼</p>
+                        <p>必点：海鲜水饺、鲅鱼饺子</p>
+                    </div>
+                    <div class="activity">
+                        <h3>崂山风景区</h3>
+                        <ul>
+                            <li>太清宫 - 道教圣地</li>
+                            <li>巨峰 - 崂山最高峰</li>
+                            <li>仰口游览区 - 山海美景</li>
+                        </ul>
+                        <p>品尝<span class="highlight">崂山可乐</span> - 独特口味</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span>𝐃𝐚𝐲𝟑｜青岛 → 烟台</span>
+                <span>200km</span>
+            </div>
+            <div class="day-content">
+                <div class="time-slot">
+                    <div class="activity">
+                        <h3>海滨公路自驾</h3>
+                        <p>沿<span class="highlight">G228海滨公路</span>出发</p>
+                        <p>途经即墨、莱西，欣赏沿途海景</p>
+                    </div>
+                    <div class="activity">
+                        <h3>招远午餐</h3>
+                        <ul>
+                            <li><strong>金丝面</strong> - 当地特色</li>
+                            <li><strong>扒鸡</strong> - 传统美味</li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <h3>烟台下午游</h3>
+                        <ul>
+                            <li>游览烟台山</li>
+                            <li>参观<span class="highlight">张裕酒文化博物馆</span></li>
+                            <li>漫步月亮湾</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span>𝐃𝐚𝐲𝟒｜烟台 → 威海 → 荣成</span>
+                <span>180km</span>
+            </div>
+            <div class="day-content">
+                <div class="time-slot">
+                    <div class="activity">
+                        <h3>威海必游</h3>
+                        <ul>
+                            <li><span class="highlight">刘公岛</span> - 北洋水师遗址</li>
+                            <li>甲午战争博物馆 - 历史教育</li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <h3>威海午餐</h3>
+                        <ul>
+                            <li><strong>威海韭菜饺子</strong> - 特色风味</li>
+                            <li><strong>海胆水饺</strong> - 鲜美无比</li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <h3>荣成下午游</h3>
+                        <ul>
+                            <li>成山头 - <span class="highlight">日出最佳观赏点</span></li>
+                            <li>神雕山野生动物自然保护区</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="food-section">
+                    <h2>荣成海鲜盛宴</h2>
+                    <div class="food-grid">
+                        <div class="food-item">海参</div>
+                        <div class="food-item">鲍鱼</div>
+                        <div class="food-item">石斑鱼</div>
+                        <div class="food-item">鲅鱼水饺</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span>𝐃𝐚𝐲𝟓｜荣成 → 日照 → 济南</span>
+                <span>550km</span>
+            </div>
+            <div class="day-content">
+                <div class="time-slot">
+                    <div class="activity">
+                        <h3>清晨活动</h3>
+                        <p>早起观看渔港晨景</p>
+                        <p>沿海滨公路南下，途经石岛湾</p>
+                    </div>
+                    <div class="activity">
+                        <h3>日照停留</h3>
+                        <ul>
+                            <li>游览<span class="highlight">日照海滨国家森林公园</span></li>
+                            <li>品尝当地特色：海鲜面、虾酱面</li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <h3>返程济南</h3>
+                        <p>途经临沂、泰安，结束完美旅程</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h2>自驾实用小贴士</h2>
+            <ul>
+                <li><span class="highlight">行车准备</span>：检查车况、备ETC、下载离线地图</li>
+                <li><span class="highlight">住宿建议</span>：青岛市南区、烟台芝罘区、荣成海边度假村</li>
+                <li><span class="highlight">必备物品</span>：防晒衣、泳衣、晕车药</li>
+                <li><span class="highlight">摄影点</span>：青岛栈桥日出、成山头日出、日照海滨</li>
+                <li><span class="highlight">错峰建议</span>：避开10:00-14:00热门景点高峰</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>更多自驾攻略请关注我的小红书 👉 #山东自驾游</p>
+            <p>欢迎评论区提问，会一一解答 💕</p>
+            <p>（配图建议：9宫格含海滨公路/海鲜大餐/日出日落/城市地标）</p>
+        </footer>
+    </div>
+</body>
+</html>

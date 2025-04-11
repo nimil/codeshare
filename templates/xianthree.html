@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西安4日暴走攻略 | 穿越千年古都</title>
+    <style>
+        :root {
+            --primary-color: #FF2442; /* 小红书主题红 */
+            --secondary-color: #333;
+            --bg-color: #FFF9F9;
+            --highlight-color: #FF9500;
+            --card-bg: white;
+        }
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--secondary-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 30px 0 20px;
+            position: relative;
+        }
+        h1 {
+            color: var(--primary-color);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: var(--secondary-color);
+            font-size: 16px;
+            opacity: 0.8;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0 25px;
+        }
+        .tag {
+            background-color: #FFEFF2;
+            color: var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .divider {
+            height: 3px;
+            background: linear-gradient(90deg, #FF2442, #FF9500);
+            margin: 20px 0;
+            border-radius: 3px;
+        }
+        .day-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(255, 36, 66, 0.08);
+            margin-bottom: 25px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .day-card:hover {
+            transform: translateY(-3px);
+        }
+        .day-header {
+            background: linear-gradient(135deg, #FF2442, #FF6B81);
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+        }
+        .day-content {
+            padding: 20px;
+        }
+        .time-slot {
+            margin-bottom: 20px;
+        }
+        .activity {
+            margin-bottom: 15px;
+        }
+        .activity h3 {
+            color: var(--primary-color);
+            font-size: 16px;
+            margin: 0 0 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        .activity h3:before {
+            content: "✨";
+            margin-right: 8px;
+        }
+        .highlight {
+            background-color: #FFF0F5;
+            color: var(--primary-color);
+            padding: 0 4px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: -15px;
+        }
+        .food-section {
+            background-color: #FFF5E6;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 25px;
+        }
+        .food-section h2 {
+            color: var(--highlight-color);
+            margin-top: 0;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .food-section h2:before {
+            content: "🍜";
+            margin-right: 8px;
+        }
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .food-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 8px rgba(255, 149, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        .food-item:before {
+            content: "✓";
+            color: var(--highlight-color);
+            margin-right: 6px;
+            font-weight: bold;
+        }
+        .bad-item {
+            opacity: 0.7;
+        }
+        .bad-item:before {
+            content: "✕";
+            color: #999;
+        }
+        .tips-section {
+            background-color: #F0F9FF;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .tips-section h2 {
+            color: #1E90FF;
+            margin-top: 0;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .tips-section h2:before {
+            content: "💡";
+            margin-right: 8px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #999;
+            font-size: 14px;
+            padding-bottom: 30px;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .food-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>西安4日暴走攻略</h1>
+            <div class="subtitle">穿越千年古都，吃遍地道美食！🏮</div>
+            <div class="tags">
+                <div class="tag">#西安旅行</div>
+                <div class="tag">#古都打卡</div>
+                <div class="tag">#美食探店</div>
+            </div>
+        </header>
+
+        <div class="divider"></div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span>𝐃𝐚𝐲𝟏｜初遇长安夜</span>
+            </div>
+            <div class="day-content">
+                <div class="time-slot">
+                    <div class="activity">
+                        <h3>入住钟楼附近</h3>
+                        <p>步行5min到<span class="highlight">回民街</span>，交通超方便</p>
+                    </div>
+                    <div class="activity">
+                        <h3>夜宵必吃</h3>
+                        <ul>
+                            <li><strong>老米家泡馍</strong> - 自己掰馍超有趣！</li>
+                            <li><strong>红柳烤肉</strong> - 10元/串巨过瘾</li>
+                            <li><strong>希木酸奶</strong> - 配炒凉粉绝了</li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <h3>拍照点</h3>
+                        <p>钟楼夜景开灯时间<span class="highlight">19:30</span>，开元商城观景台免费</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span>𝐃𝐚𝐲𝟐｜博物馆奇妙日</span>
+            </div>
+            <div class="day-content">
+                <div class="time-slot">
+                    <div class="activity">
+                        <h3>陕西历史博物馆</h3>
+                        <p><span class="highlight">提前3天预约！</span>8:30准时冲</p>
+                        <p>镇馆之宝：</p>
+                        <ul>
+                            <li>鎏金舞马衔杯银壶</li>
+                            <li>皇后玉玺</li>
+                            <li>三彩载乐驼</li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <h3>午餐推荐</h3>
+                        <p><strong>子午路张记肉夹馍</strong> - 优质肉夹馍+冰峰=老陕标配</p>
+                    </div>
+                    <div class="activity">
+                        <h3>大雁塔机位</h3>
+                        <ul>
+                            <li>大悦城4楼观景台（拍人塔合影）</li>
+                            <li>北广场<span class="highlight">19:00</span>音乐喷泉</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span>𝐃𝐚𝐲𝟑｜城墙骑行+盛唐夜宴</span>
+            </div>
+            <div class="day-content">
+                <div class="time-slot">
+                    <div class="activity">
+                        <h3>城墙骑行tips</h3>
+                        <ul>
+                            <li>南门租车<span class="highlight">45元/3h</span></li>
+                            <li>最佳时段：8:00-10:00（不晒）</li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <h3>碑林博物馆隐藏玩法</h3>
+                        <p>找解说员小姐姐要<span class="highlight">书法明信片</span>！</p>
+                    </div>
+                    <div class="activity">
+                        <h3>大唐不夜城必看</h3>
+                        <ul>
+                            <li><span class="highlight">19:30-22:00</span>不间断演出</li>
+                            <li>不倒翁小姐姐在北广场</li>
+                            <li>诗词街亮灯超浪漫</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="day-card">
+            <div class="day-header">
+                <span>𝐃𝐚𝐲𝟒｜世界第八大奇迹</span>
+            </div>
+            <div class="day-content">
+                <div class="time-slot">
+                    <div class="activity">
+                        <h3>兵马俑避坑指南</h3>
+                        <ul>
+                            <li>认准官方讲解员（<span class="highlight">灰制服带工牌</span>）</li>
+                            <li>铜车马在最后展厅别错过！</li>
+                        </ul>
+                    </div>
+                    <div class="activity">
+                        <h3>华清宫长恨歌演出</h3>
+                        <ul>
+                            <li>第二场<span class="highlight">20:10</span>开始观感最佳</li>
+                            <li>提前买中区票视角更好</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="food-section">
+            <h2>美食红黑榜</h2>
+            <div class="food-grid">
+                <div class="food-item">马洪小炒泡馍（酸辣口超开胃）</div>
+                <div class="food-item">爱骅裤带面（三合一绝了）</div>
+                <div class="food-item">花奶奶酸梅汤（双拼yyds）</div>
+                <div class="food-item">贾三灌汤包（皮薄汁多）</div>
+                <div class="food-item bad-item">回民街主街的柿子饼（太油）</div>
+                <div class="food-item bad-item">景区门口的"特色"石榴汁</div>
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h2>实用小贴士</h2>
+            <ul>
+                <li>地铁用"<span class="highlight">西安地铁乘车码</span>"小程序</li>
+                <li>兵马俑直通车在钟楼饭店门口</li>
+                <li>带本子集章（陕历博/碑林都有）</li>
+                <li><span class="highlight">汉服拍照</span>选红色/唐制</li>
+                <li>城墙穿浅色系很出片</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>图文版完整攻略戳主页收藏夹👉 #十三朝古都攻略</p>
+            <p>有问题评论区见，会一一回复哒 💕</p>
+            <p>（配图建议：9宫格含钟楼夜景/泡馍制作过程/汉服打卡照/兵马俑全景/美食特写）</p>
+        </footer>
+    </div>
+</body>
+</html>
