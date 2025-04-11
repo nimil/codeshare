@@ -11,12 +11,6 @@
 - AI 自动生成攻略内容
 - Docker 容器化部署
 
-## 效果展示
-
-![首页预览](docs/images/home.png)
-![西安攻略](docs/images/xian.png)
-![山东攻略](docs/images/shandong.png)
-
 ## 快速开始
 
 ### 获取代码
@@ -43,11 +37,12 @@ cd codeshare
 
 ### 生成旅游攻略
 
-1. 使用高德 MCP 工具获取地理信息：
+1. 使用高德 MCP 工具获取地理信息并将mcp工具配置到cursor中：
 ```python
 # 示例：获取景点信息
 response = mcp_amap_text_search(keywords="西安城墙", city="西安")
 ```
+![mcp](docs/images/mcpconfigres.jpg)
 
 2. 生成攻略提示词示例：
 ```text
@@ -58,6 +53,7 @@ response = mcp_amap_text_search(keywords="西安城墙", city="西安")
 - 住宿推荐
 - 注意事项
 ```
+![mcpuse](docs/images/mcpconfig.jpg) 
 
 3. 使用 DeepSeek-V3 生成 HTML：
 ```text
@@ -67,6 +63,7 @@ response = mcp_amap_text_search(keywords="西安城墙", city="西安")
 - 包含动态效果
 - 适配移动端
 ```
+![shandongpromote](docs/images/deepseeknotice.jpg)
 
 ### 构建 Docker 镜像
 
@@ -131,7 +128,7 @@ docker run -d --name travel-guide -p 8914:8914 travel-guide:latest
 - DeepSeek-V3
 - Docker
 
-## API 文档
+## 生成工具
 
 ### 高德地图 MCP 接口
 
