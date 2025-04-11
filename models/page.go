@@ -16,10 +16,16 @@ type Page struct {
 }
 
 var db *sql.DB
+var dbPath string = "./data/travel_guide.db"
+
+// SetDBPath 设置数据库文件路径
+func SetDBPath(path string) {
+	dbPath = path
+}
 
 func InitDB() error {
 	var err error
-	db, err = sql.Open("sqlite3", "./travel_guide.db")
+	db, err = sql.Open("sqlite3", dbPath)
 	if err != nil {
 		return err
 	}
