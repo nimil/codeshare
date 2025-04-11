@@ -11,6 +11,14 @@
 
 ## 快速开始
 
+### 获取代码
+
+```bash
+# 克隆仓库
+git clone git@github.com:nimil/codeshare.git
+cd codeshare
+```
+
 ### 构建 Docker 镜像
 
 ```bash
